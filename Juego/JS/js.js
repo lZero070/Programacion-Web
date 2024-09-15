@@ -52,6 +52,14 @@ function checkGuess(event) {
     }
 
     let guess = parseInt(document.getElementById('guess').value);
+
+    if (isNaN(guess) || guess < 1 || guess > 100) {
+        showResult('Número no permitido. Por favor, ingresa un número entre 1 y 100.');
+        document.getElementById('guess').value = '';
+        return; // Salir de la función si el número es inválido
+    }
+
+
     attempts++;
 
     document.getElementById('guess').value = '';
@@ -89,8 +97,8 @@ function showResult(message) {
 
 function showAttempts() {
     let attemptsList = '';
-    previousAttempts.forEach(attempt => {
-        attemptsList += `<li>${attempt}</li>`;
+    previousAttempts.forEach((attempt, index) => {
+        attemptsList += `<li>Intento ${index + 1}: ${attempt}</li>`;
     });
     document.getElementById('attempts').innerHTML = `<ul>${attemptsList}</ul>`;
 }
@@ -145,6 +153,12 @@ function saveScore(name, attempts, time) {
     alert('¡Puntuación guardada!');
 }
 
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes} minuto${minutes !== 1 ? 's' : ''} con ${remainingSeconds} segundo${remainingSeconds !== 1 ? 's' : ''}`;
+}
+
 function displayScores() {
     let scores = JSON.parse(localStorage.getItem('scores')) || [];
     const recordsList = document.getElementById('records-list');
@@ -158,7 +172,8 @@ function displayScores() {
 
     let scoresList = '<ol>';
     scores.forEach(score => {
-        scoresList += `<li>${score.name}: ${score.attempts} intentos, ${score.time} segundos</li>`;
+        const formattedTime = formatTime(score.time);
+        scoresList += `<li>${score.name}: ${score.attempts} intentos, ${formattedTime}</li>`;
     });
     scoresList += '</ol>';
     recordsList.innerHTML += scoresList;
