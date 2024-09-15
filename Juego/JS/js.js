@@ -76,9 +76,9 @@ function checkGuess(event) {
         showPlayAgainButton();
     } else if (attempts < 10) {
         if (guess < magicNumber) {
-            showResult(`Tu numero elegido es más bajo. Intenta de nuevo.`);
+            showResult(`El numero ingresado es inferior. Intenta de nuevo.`);
         } else {
-            showResult(`Tu numero elegido es más alto. Intenta de nuevo.`);
+            showResult(`El numero ingresado es superior. Intenta de nuevo.`);
         }
         previousAttempts.push(guess);
         showAttempts();
