@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laberinto</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <h1 id="title">SavedMoney</h1>
+    <div id="userInput">
+        <input type="text" id="username" placeholder="Ingresa tu nombre" />
+        <button id="startGame">Iniciar Juego</button>
+    </div>
+    <div id="difficultySelection" style="display: none;">
+        <h2>Selecciona la dificultad:</h2>
+        <button class="difficulty" data-size="9">Fácil</button>
+        <button class="difficulty" data-size="19">Intermedio</button>
+        <button class="difficulty" data-size="31">Difícil</button>
+    </div>
+    <div id="timer" style="position: absolute; top: 10px; right: 10px; font-size: 20px; color: #333;">Tiempo: 0s</div>
+    <div id="points" style="position: absolute; top: 40px; right: 10px; font-size: 20px; color: #333;">Puntos: 0</div>
+    <div id="maze"></div>
+    <div id="actionButtons" style="display: none;">
+        <button id="giveUp">Rendirse</button>
+        <button id="newMaze">Generar Nuevo Laberinto</button>
+        <button id="lowerDifficulty" style="display: none;">&#8592; Dificultad Inferior</button>
+        <button id="higherDifficulty" style="display: none;">Dificultad Superior &#8594;</button>
+    </div>
+    <audio id="successSound">
+        <source src="./img/VICTORIA.mp3" type="audio/mp3"> 
+    </audio>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

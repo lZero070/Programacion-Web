@@ -1,0 +1,84 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/fondo.jpg'); /* Cambia la ruta según corresponda */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+#title {
+    margin: 20px 0;
+}
+
+#userInput {
+    margin: 20px 0;
+}
+
+#userInput input {
+    padding: 5px;
+    font-size: 14px;
+}
+
+#userInput button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+#maze {
+    display: grid;
+    gap: 1px;
+    margin: 20px auto;
+    width: max-content;
+}
+
+.cell {
+    width: 15px;
+    height: 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.start {
+    background-color: #76c7c0;
+}
+
+.end {
+    background-color: #f7b731;
+}
+
+.wall {
+    background-color: #333;
+}
+
+.path {
+    background-color: #fff;
+}
+
+.active {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+#difficultySelection, #actionButtons {
+    margin: 20px 0;
+}
+
+.difficulty, #actionButtons button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.active {
+    background-image: url('../img/cerdito.png'); /* Cambia la ruta según corresponda */
+    background-size: cover; /* Hace que la imagen cubra el área del cuadrado */
+    background-color: transparent; /* Asegúrate de que el fondo sea transparente */
+    color: transparent; /* Oculta el texto, si hay alguno */
+}
+.point {
+    width: 15px;
+    height: 15px;
+    background-image: url('../img/moneda.png'); /* Cambia la ruta según corresponda */
+    background-size: cover;
+}
